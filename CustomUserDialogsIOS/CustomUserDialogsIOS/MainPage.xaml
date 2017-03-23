@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CustomUserDialogsIOS"
+             xmlns:controls="clr-namespace:CustomUserDialogsIOS.Controls"
+             x:Class="CustomUserDialogsIOS.MainPage"
+             Padding="0,20,0,0"
+             BackgroundColor="#EEEEEE">
+
+    <Grid
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand"
+	    ColumnSpacing="10"
+	    RowSpacing="0"
+        >
+
+        <Grid
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="Start"
+            HeightRequest="60">
+
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <controls:ActiveGrid 	
+                Grid.Column="0"
+			    HorizontalOptions="FillAndExpand"
+                HeightRequest="60"
+                BackgroundColor="Red">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ConfirmCommand}"/>
+                </Grid.GestureRecognizers>
+                <Label Text="Confirm" VerticalOptions="Center" HorizontalOptions="Center" />
+            </controls:ActiveGrid>
+
+            <controls:ActiveGrid 	
+                Grid.Column="1"
+			    HorizontalOptions="FillAndExpand"
+                HeightRequest="60"
+                BackgroundColor="Green">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ActionCommand}"/>
+                </Grid.GestureRecognizers>
+                <Label Text="Action sheet" VerticalOptions="Center" HorizontalOptions="Center" />
+            </controls:ActiveGrid>
+
+            <controls:ActiveGrid 	
+                Grid.Column="2"
+			    HorizontalOptions="FillAndExpand"
+                HeightRequest="60"
+                BackgroundColor="Blue">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding PromptCommand}"/>
+                </Grid.GestureRecognizers>
+                <Label Text="Prompt" VerticalOptions="Center" HorizontalOptions="Center" />
+            </controls:ActiveGrid>
+
+            <controls:ActiveGrid 	
+                Grid.Column="3"
+			    HorizontalOptions="FillAndExpand"
+                HeightRequest="60"
+                BackgroundColor="Yellow">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ToastCommand}"/>
+                </Grid.GestureRecognizers>
+                <Label Text="Toast" VerticalOptions="Center" HorizontalOptions="Center" />
+            </controls:ActiveGrid>
+
+            <!--<Button Text="Confirm" Command="{Binding ConfirmCommand}" />
+            <Button Text="ActionSheet" Command="{Binding ActionCommand}" />
+            <Button Text="Prompt" Command="{Binding PromptCommand}" />
+            <Button Text="Toast" Command="{Binding ToastCommand}" />-->
+
+
+        </Grid>
+    </Grid>
+
+</ContentPage>
